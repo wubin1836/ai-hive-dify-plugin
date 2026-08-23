@@ -31,6 +31,10 @@ parameters:
     label:
       en_US: Reference images, videos or audio
       zh_Hans: 参考图片、视频或音频
+    human_description:
+      en_US: Optional reference media supported by the selected model and generation mode.
+      zh_Hans: 可选的参考素材，具体支持类型取决于模型与生成模式。
+    llm_description: Optional image, video, or audio reference files for the requested video task.
   - name: first_frame
     type: files
     required: false
@@ -38,6 +42,9 @@ parameters:
     label:
       en_US: First frame
       zh_Hans: 首帧图片
+    human_description:
+      en_US: Optional first-frame image for models that support first-frame control.
+      zh_Hans: 可选的首帧图片，适用于支持首帧控制的模型。
   - name: last_frame
     type: files
     required: false
@@ -45,6 +52,9 @@ parameters:
     label:
       en_US: Last frame
       zh_Hans: 尾帧图片
+    human_description:
+      en_US: Optional last-frame image for models that support last-frame control.
+      zh_Hans: 可选的尾帧图片，适用于支持尾帧控制的模型。
   - name: model_family
     type: select
     required: true
@@ -53,6 +63,9 @@ parameters:
     label:
       en_US: Model family
       zh_Hans: 模型系列
+    human_description:
+      en_US: Select the AI video model family to use.
+      zh_Hans: 选择需要调用的 AI 视频模型系列。
     options:
       - value: seedance_2_5
         label: { en_US: Seedance 2.5, zh_Hans: Seedance 2.5 }
@@ -68,6 +81,9 @@ parameters:
     label:
       en_US: Generation mode
       zh_Hans: 生成模式
+    human_description:
+      en_US: Select text-to-video, image-to-video, reference generation, editing, or extension.
+      zh_Hans: 选择文生视频、图生视频、参考生成、视频编辑或视频延长。
     options:
       - value: t2v
         label: { en_US: Text to video, zh_Hans: 文生视频 }
@@ -97,6 +113,9 @@ parameters:
     label:
       en_US: Routing
       zh_Hans: 路由方式
+    human_description:
+      en_US: Choose whether AI Hive prioritizes cost, speed, or success rate.
+      zh_Hans: 选择 AI Hive 优先考虑价格、速度或成功率。
     options:
       - value: COST_FIRST
         label: { en_US: Cost first, zh_Hans: 价格优先 }
@@ -112,6 +131,9 @@ parameters:
     label:
       en_US: Advanced parameters (JSON)
       zh_Hans: 高级参数（JSON）
+    human_description:
+      en_US: Optional model-specific parameters as a JSON object.
+      zh_Hans: 可选的模型专属参数，使用 JSON 对象格式填写。
   - name: wait_for_result
     type: boolean
     required: true
@@ -120,6 +142,9 @@ parameters:
     label:
       en_US: Wait for result
       zh_Hans: 等待生成结果
+    human_description:
+      en_US: Wait for completion and return result URLs when enabled.
+      zh_Hans: 开启后等待任务完成并直接返回结果链接。
   - name: timeout_seconds
     type: number
     required: false
@@ -130,6 +155,9 @@ parameters:
     label:
       en_US: Wait timeout
       zh_Hans: 等待超时秒数
+    human_description:
+      en_US: Maximum time to wait before returning the task for later querying.
+      zh_Hans: 最长等待时间，超时后可使用任务查询工具继续查询。
 output_schema:
   type: object
   properties:

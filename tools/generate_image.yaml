@@ -42,6 +42,9 @@ parameters:
     label:
       en_US: Model
       zh_Hans: 模型
+    human_description:
+      en_US: Select an image model available through AI Hive.
+      zh_Hans: 选择通过 AI Hive 调用的图片模型。
     options:
       - value: public_model_nano_banana_pro
         label: { en_US: Nano Banana Pro, zh_Hans: Nano Banana Pro }
@@ -61,6 +64,9 @@ parameters:
     label:
       en_US: Number of images
       zh_Hans: 生成数量
+    human_description:
+      en_US: Number of image results to request in this task.
+      zh_Hans: 本次任务需要生成的图片数量。
   - name: routing_mode
     type: select
     required: true
@@ -69,6 +75,9 @@ parameters:
     label:
       en_US: Routing
       zh_Hans: 路由方式
+    human_description:
+      en_US: Choose whether AI Hive prioritizes cost, speed, or success rate.
+      zh_Hans: 选择 AI Hive 优先考虑价格、速度或成功率。
     options:
       - value: COST_FIRST
         label: { en_US: Cost first, zh_Hans: 价格优先 }
@@ -84,6 +93,9 @@ parameters:
     label:
       en_US: Advanced parameters (JSON)
       zh_Hans: 高级参数（JSON）
+    human_description:
+      en_US: Optional model-specific parameters as a JSON object.
+      zh_Hans: 可选的模型专属参数，使用 JSON 对象格式填写。
   - name: wait_for_result
     type: boolean
     required: true
@@ -92,6 +104,9 @@ parameters:
     label:
       en_US: Wait for result
       zh_Hans: 等待生成结果
+    human_description:
+      en_US: Wait for completion and return result URLs when enabled.
+      zh_Hans: 开启后等待任务完成并直接返回结果链接。
   - name: timeout_seconds
     type: number
     required: false
@@ -102,6 +117,9 @@ parameters:
     label:
       en_US: Wait timeout
       zh_Hans: 等待超时秒数
+    human_description:
+      en_US: Maximum time to wait before returning the task for later querying.
+      zh_Hans: 最长等待时间，超时后可使用任务查询工具继续查询。
 output_schema:
   type: object
   properties:
