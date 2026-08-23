@@ -36,6 +36,8 @@ The plugin reads live model metadata and pricing snapshots before each submissio
 - A valid AI Hive API key.
 - Network access to model result URLs returned by AI Hive.
 
+AI Hive is an external service. Model usage may consume paid AI Hive credits according to the pricing shown in the user's AI Hive account; the Dify plugin itself does not sell a subscription or process payments.
+
 The plugin sends prompts, generation parameters, and user-supplied reference media to AI Hive only when required to complete the requested task. It does not embed or log the user's API key.
 
 ## Development
